@@ -7,9 +7,9 @@
 ### 基本使用
 1.新建一个类，AnyEventType。可以是网络请求返回的字符串，也可以是某个开关状态，也可以是空。
 
-    public class AnyEventType {  
-     public AnyEventType(){}  
-    }  
+    public class AnyEventType {
+    public AnyEventType(){}
+    }
 
 2.注册订阅者
 
