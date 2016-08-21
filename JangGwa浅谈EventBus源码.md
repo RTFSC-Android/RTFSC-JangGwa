@@ -1,8 +1,4 @@
----
-title: JangGwa浅谈EventBus源码
-date: 2016-08-17 15:04:46
-tags: 源码解析
----
+
 ![EventBus-Publish-Subscribe.png](http://oc1m6u2t9.bkt.clouddn.com/EventBus-Publish-Subscribe.png)
 
 ### 简述
