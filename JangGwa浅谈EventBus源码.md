@@ -2,7 +2,7 @@
 ![EventBus-Publish-Subscribe.png](http://oc1m6u2t9.bkt.clouddn.com/EventBus-Publish-Subscribe.png)
 
 ### 简述
-[EventBus](https://github.com/greenrobot/EventBus)是一款针对Android优化的发布/订阅事件总线。主要功能是替代Intent,Handler,BroadCast在Fragment，Activity，Service，线程之间传递消息。优点是开销小，代码更优雅，以及将发送者和接收者解耦。<!-- more -->
+[EventBus](https://github.com/greenrobot/EventBus)是一款针对Android优化的发布/订阅事件总线。主要功能是替代Intent,Handler,BroadCast在Fragment，Activity，Service，线程之间传递消息。优点是开销小，代码更优雅，以及将发送者和接收者解耦。
 
 ### 基本使用
 1.新建一个类，AnyEventType。可以是网络请求返回的字符串，也可以是某个开关状态，也可以是空。
