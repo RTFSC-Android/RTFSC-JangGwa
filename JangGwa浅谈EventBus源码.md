@@ -1,5 +1,5 @@
 
-![EventBus-Publish-Subscribe.png](http://oc1m6u2t9.bkt.clouddn.com/EventBus-Publish-Subscribe.png)
+<img src = "http://oc1m6u2t9.bkt.clouddn.com/EventBus-Publish-Subscribe.png" width="400" align="center" />
 
 ### 简述
 [EventBus](https://github.com/greenrobot/EventBus)是一款针对Android优化的发布/订阅事件总线。主要功能是替代Intent,Handler,BroadCast在Fragment，Activity，Service，线程之间传递消息。优点是开销小，代码更优雅，以及将发送者和接收者解耦。
@@ -71,7 +71,7 @@ register 函数中会先根据订阅者类名去subscriberMethodFinder
       } 
     }
 
-![register.png](http://oc1m6u2t9.bkt.clouddn.com/register.png)
+<img src = "http://oc1m6u2t9.bkt.clouddn.com/register.png" width="400" align="center" />
 
 ##### 3.subscribe
 源码太长就不全部贴出来了
@@ -146,7 +146,7 @@ postToSubscription 函数中会判断订阅者的 ThreadMode，从而决定在�
 - Async：不论发布线程是否为主线程，都使用一个空闲线程来处理。和BackgroundThread不同的是，Async类的所有线程是相互独立的，因此不会出现卡线程的问题。适用场景：*长耗时操作，例如网络访问*。
 
 
-![post.png](http://oc1m6u2t9.bkt.clouddn.com/post.png)
+<img src="http://oc1m6u2t9.bkt.clouddn.com/post.png" width="400" align="center"/>
 
 
 
