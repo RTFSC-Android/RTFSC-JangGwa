@@ -57,25 +57,6 @@ Android 源码的查看一般有以下几种方式：
 - [大牛们是怎么阅读 Android 系统源码的？](https://www.zhihu.com/question/19759722)  
 - [阅读 ANDROID 源码的一些姿势](http://kaedea.com/2016/02/09/android-about-source-code-how-to-read/)  
 
-## 加入我们
-
-最初，其实我是想一个人默默的啃源码，不过后来有人想要加入，所以现在开放加入。
-
-如果你有兴趣加入，请先看看条件。
-
-0. 绝对不能是伸手党  
-1. 有上进心，认真，爱学习  
-2. 最好有写博客文章的习惯  
-4. 有爱心，愿意互相帮助  
-5. 严肃认真对待此事  
-
-如果你觉得你差不多符合条件，并且有兴趣加入，那么看下去吧。  
-
-1. 加入 Github 组织，提 issue 留下意向，github 昵称或者邮件，以及博客地址，我看到验证后会发送邀请。
-2. 加入 Tower，我正在使用 Tower 作为源码阅读的计划与管理工具，感觉挺不错的，也方便查看成员的计划与动态，有兴趣的点[邀请链接](https://tower.im/join?t=bc25cd4a8571075ba0edc9b50cb3ba39)。
-3. 加入 钉钉，有兴趣的点[邀请链接](https://t.dingtalk.com/invite/index?code=9e319b7cf7&inviterUid=F56384EBC8CCEE72)
-4. 加微信群『RTFSC』交流，加我微信，请注明来由。    
-
 ## 版权信息
 
 不欢迎并拒绝任何形式的全文转载！ 
