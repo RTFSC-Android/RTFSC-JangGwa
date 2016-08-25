@@ -14,7 +14,7 @@
 
 相对于看文章，看书有利于系统的学习，看源码的好处更是多多。
 
-书也是有好有坏，关于书籍，我有一个记录读书笔记的项目[ReadingNotes](https://github.com/AlanCheen/ReadingNotes),记录读书笔记，也有些扩展，对书籍也有一个相对比较客观的评价,或许可以帮到你，这里就不多说了。
+书也是有好有坏，关于书籍，这边推荐一个读书笔记的项目[ReadingNotes](https://github.com/AlanCheen/ReadingNotes),记录读书笔记，也有些扩展，对书籍也有一个相对比较客观的评价,或许可以帮到你，这里就不多说了。
 
 ## 阅读源码的好处
 
@@ -75,12 +75,6 @@ Android 源码的查看一般有以下几种方式：
 2. 加入 Tower，我正在使用 Tower 作为源码阅读的计划与管理工具，感觉挺不错的，也方便查看成员的计划与动态，有兴趣的点[邀请链接](https://tower.im/join?t=bc25cd4a8571075ba0edc9b50cb3ba39)。
 3. 加入 钉钉，有兴趣的点[邀请链接](https://t.dingtalk.com/invite/index?code=9e319b7cf7&inviterUid=F56384EBC8CCEE72)
 4. 加微信群『RTFSC』交流，加我微信，请注明来由。    
-
-如果过期，请加我微信。  
-
-<img src="http://ww3.sinaimg.cn/large/98900c07gw1f759nreielj20u01biwhx.jpg" width="300" height="400"/>
-
-![我的微信](http://ww3.sinaimg.cn/thumbnail/98900c07gw1f2f30b7cs5j20e80e80tx.jpg)    
 
 ## 版权信息
 
