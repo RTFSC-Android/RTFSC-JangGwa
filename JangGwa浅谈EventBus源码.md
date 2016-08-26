@@ -1,6 +1,6 @@
-
-<img src = "http://oc1m6u2t9.bkt.clouddn.com/EventBus-Publish-Subscribe.png" width="400" align="center" />
-
+<div align=center>
+<img src = "http://oc1m6u2t9.bkt.clouddn.com/EventBus-Publish-Subscribe.png" width="650" />
+</div>
 ### 简述
 [EventBus](https://github.com/greenrobot/EventBus)是一款针对Android优化的发布/订阅事件总线。主要功能是替代Intent,Handler,BroadCast在Fragment，Activity，Service，线程之间传递消息。优点是开销小，代码更优雅，以及将发送者和接收者解耦。
 
@@ -70,9 +70,9 @@ register 函数中会先根据订阅者类名去subscriberMethodFinder
         } 
       } 
     }
-
+<div align=center>
 <img src = "http://oc1m6u2t9.bkt.clouddn.com/register.png" width="400" align="center" />
-
+</div>
 ##### 3.subscribe
 源码太长就不全部贴出来了
 
@@ -145,9 +145,9 @@ postToSubscription 函数中会判断订阅者的 ThreadMode，从而决定在�
 - BackgroundThread：在后台线程中执行响应方法。如果发布线程**不是**主线程，则直接调用订阅者的事件响应函数，否则启动**唯一的**后台线程去处理。由于后台线程是唯一的，当事件超过一个的时候，它们会被放在队列中依次执行，因此该类响应方法虽然没有PostThread类和MainThread类方法对性能敏感，但最好不要有重度耗时的操作或太频繁的轻度耗时操作，以造成其他操作等待。适用场景：*操作轻微耗时且不会过于频繁*，即一般的耗时操作都可以放在这里；
 - Async：不论发布线程是否为主线程，都使用一个空闲线程来处理。和BackgroundThread不同的是，Async类的所有线程是相互独立的，因此不会出现卡线程的问题。适用场景：*长耗时操作，例如网络访问*。
 
-
+<div align=center>
 <img src="http://oc1m6u2t9.bkt.clouddn.com/post.png" width="400" align="center"/>
-
+</div>
 
 
 ##### 5.unregister
