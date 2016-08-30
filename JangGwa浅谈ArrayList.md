@@ -253,7 +253,8 @@ elementData数组的大小会根据ArrayList容量的增长而动态的增长，
  
  **解决方案**
  
- 	public static Integer[] vectorToArray2(ArrayList<Integer> v) {
+ 
+	public static Integer[] vectorToArray2(ArrayList<Integer> v) {
     	Integer[] newText = (Integer[])v.toArray(new Integer[0]);
     	return newText;
 	}
