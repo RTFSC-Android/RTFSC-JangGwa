@@ -1,5 +1,5 @@
 <div align=center>
-<img src = "http://oc1m6u2t9.bkt.clouddn.com/EventBus-Publish-Subscribe.png" width="650" />
+<img src = "http://oc1m6u2t9.bkt.clouddn.com/EventBus-Publish-Subscribe.png" width="655" />
 </div>
 ### 简述
 [EventBus](https://github.com/greenrobot/EventBus)是一款针对Android优化的发布/订阅事件总线。主要功能是替代Intent,Handler,BroadCast在Fragment，Activity，Service，线程之间传递消息。优点是开销小，代码更优雅，以及将发送者和接收者解耦。
