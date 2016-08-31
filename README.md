@@ -1,4 +1,4 @@
-# RTFSC-JangGwa
+I# RTFSC-JangGwa
 
 > Read The Fucking Source Code
 
@@ -68,3 +68,5 @@ Android 源码的查看一般有以下几种方式：
 [EventBus 源码分析](./JangGwa浅谈EventBus.md)  
 
 [ArrayList 源码分析](./JangGwa浅谈ArrayList.md)  
+
+[LinkedList 源码分析](./JangGwa浅谈LinkedList.md)
