@@ -70,3 +70,5 @@ Android 源码的查看一般有以下几种方式：
 [ArrayList 源码分析](./JangGwa浅谈ArrayList.md)  
 
 [LinkedList 源码分析](./JangGwa浅谈LinkedList.md)
+
+[HashMap 源码分析](./JangGwa浅谈HashMap(JDK1.8).md)
