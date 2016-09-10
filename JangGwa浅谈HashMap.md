@@ -3,23 +3,25 @@ title: JangGwa浅谈HashMap(JDK1.8)
 date: 2016-09-05 17:33:34
 tags: Java
 ---
+
 ### HashMap简介
-JangGwa从源码角度带你熟悉一下**JDK1.8**的HashMap，首先简单介绍下HashMap。<!-- more -->
 
-1.HashMap有三种数据结构，**数组**，**链表**，**红黑树**。
+JangGwa 从源码角度带你熟悉一下**JDK1.8**的 HashMap ，首先简单介绍下 HashMap 。<!-- more -->
 
-2.HashMap是**非线程安全**的
+1.HashMap 有三种数据结构，**数组**，**链表**，**红黑树**。
 
-3.HashMap存储的内容是键值对(key-value)映射，**key、value都可以为null**。
+2.HashMap 是**非线程安全**的
 
-4.HashMap中的**映射不是有序**的。
+3.HashMap 存储的内容是键值对(key-value)映射，**key、value 都可以为 null**。
 
-5.实现了Cloneable接口，能被**克隆**。
+4.HashMap 中的**映射不是有序**的。
 
-6.实现了Serializable接口，支持**序列化**。
+5.实现了 Cloneable 接口，能被**克隆**。
+
+6.实现了 Serializable 接口，支持**序列化**。
 
 ### HashMap源码解析
-HashMap继承了AbstractMap并实现了Map, Cloneable, java.io.Serializable 接口，上面做了相应的介绍就不再阐述了。关键我们看两个重要的属性**initialCapacity**,**loadFactor**。
+HashMap 继承了 AbstractMap 并实现了 Map, Cloneable, java.io.Serializable  接口，上面做了相应的介绍就不再阐述了。关键我们看两个重要的属性 **initialCapacity**,**loadFactor**。
 
 **initialCapacity:**初始容量，是哈希表创建中桶的数量。
 
@@ -27,7 +29,7 @@ HashMap继承了AbstractMap并实现了Map, Cloneable, java.io.Serializable 接�
 
 **当哈希表中的条目数超出了加载因子与当前容量的乘积时，哈希表将具有两倍的桶数。**
 
-```
+```java
 public class More ...HashMap<K,V> extends AbstractMap<K,V>
      implements Map<K,V>, Cloneable, Serializable {
       private static final long serialVersionUID = 362498820763181265L;
@@ -45,13 +47,15 @@ public class More ...HashMap<K,V> extends AbstractMap<K,V>
 	  static final int MIN_TREEIFY_CAPACITY = 64;
 	  // 存储元素的数组
 	  transient Node<k,v>[] table;
+	}
+}
 ```
 
 **Node节点的数据结构**
 
-```
-// 继承自 Map.Entry<K,V>
-static class Node<K,V> implements Map.Entry<K,V> {
+```java
+	// 继承自 Map.Entry<K,V>
+	static class Node<K,V> implements Map.Entry<K,V> {
        final int hash;
        final K key;
        V value;
@@ -88,13 +92,13 @@ static class Node<K,V> implements Map.Entry<K,V> {
             }
             return false;
         }
-}
-
+	}
 
 ```
+
 **树节点数据结构**
 
-```
+```java
 static final class TreeNode<K,V> extends LinkedHashMap.Entry<K,V> {
         TreeNode<K,V> parent;  // 父
         TreeNode<K,V> left;    // 左
@@ -111,11 +115,13 @@ static final class TreeNode<K,V> extends LinkedHashMap.Entry<K,V> {
                     return r;
                 r = p;
        }
-```
-**HashMap的4个构造函数**
 
 ```
-	// 默认构造函数。
+
+**HashMap 的4个构造函数**
+
+```java
+// 默认构造函数。
 	public More ...HashMap() {
         this.loadFactor = DEFAULT_LOAD_FACTOR; // all 	other fields defaulted
      }
@@ -143,17 +149,17 @@ static final class TreeNode<K,V> extends LinkedHashMap.Entry<K,V> {
          this.threshold = tableSizeFor(initialCapacity);
      }
 
-
 ```
-**put函数**
 
-```
+**put 函数**
+
+```java
 public V put(K key, V value) {
     // 对key的hashCode()做hash
     return putVal(hash(key), key, value, false, true);
-}
+	}
 
-final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
+	final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
                boolean evict) {
     Node<K,V>[] tab; Node<K,V> p; int n, i;
     // tab为空则创建
@@ -205,15 +211,15 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
 
 ```
 
-**get函数**
+**get 函数**
 
-```
+```java
 public V get(Object key) {
     Node<K,V> e;
     return (e = getNode(hash(key), key)) == null ? null : e.value;
-}
+	}
 
-final Node<K,V> getNode(int hash, Object key) {
+	final Node<K,V> getNode(int hash, Object key) {
     Node<K,V>[] tab; Node<K,V> first, e; int n; K k;
     if ((tab = table) != null && (n = tab.length) > 0 &&
         (first = tab[(n - 1) & hash]) != null) {
@@ -239,9 +245,9 @@ final Node<K,V> getNode(int hash, Object key) {
 
 ```
 
-**resize函数**
+**resize 函数**
 
-```
+```java
 final Node<K,V>[] resize() {
     Node<K,V>[] oldTab = table;
     int oldCap = (oldTab == null) ? 0 : oldTab.length;
@@ -322,20 +328,15 @@ final Node<K,V>[] resize() {
     }
     return newTab;
 }
+
 ```
 
 ### 总结
 
-- HHashMap有三种数据结构，**数组**，**链表**，**红黑树**。
+- HHashMap 有三种数据结构，**数组**，**链表**，**红黑树**。
 - 如果冲突节点到**8**时，就把**链表转换成红黑树**；
-- 如果bucket满了(超过load factor*current capacity)，就要resize。
-- 在resize的过程，就是把bucket扩充为2倍，之后重新计算index，把节点再放到新的bucket中。
-- get（）如果有冲突，则通过key.equals(k)去查找对应的entry
-若为树，则在树中通过key.equals(k)查找，O(logn)；
-若为链表，则在链表中通过key.equals(k)查找，O(n)。
-
-
-
-
-
-
+- 如果 bucket 满了(超过 load factor*current capacity )，就要 resize。
+- 在 resize 的过程，就是把bucket扩充为2倍，之后重新计算 index ，把节点再放到新的 bucket 中。
+- `get()`如果有冲突，则通过`key.equals(k)`去查找对应的 entry
+  若为树，则在树中通过`key.equals(k)`查找，O(logn)；
+  若为链表，则在链表中通过`key.equals(k)`查找，O(n)。
