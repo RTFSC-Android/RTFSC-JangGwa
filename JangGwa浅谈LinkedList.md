@@ -4,13 +4,13 @@ date: 2016-08-31 15:22:52
 tags: Java
 ---
 ### LinkedList介绍
-JangGwa 从源码角度带你再熟悉一次 LinkedList ，首先简单介绍下 LinkedList 。<!-- more -->
+JangGwa 从源码角度带你再熟悉一次 LinkedList ，首先简单介绍下 LinkedList 。
 
 1.基于**双向链表**实现，链表无容量限制。
 
 2.LinkedList 是**非线程安全**的。
 
-3.实现了List接口，实现了`**get(int location)`、`remove(int location)`**等根据索引值来获取、删除节点的函数。
+3.实现了List接口，实现了`get(int location)`、`remove(int location)`等根据索引值来获取、删除节点的函数。
 
 4.实现了 Deque 接口，可以将 LinkedList 当做**双端队列使用**。
 

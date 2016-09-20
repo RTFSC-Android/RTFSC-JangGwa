@@ -4,11 +4,11 @@ date: 2016-08-30 15:36:25
 tags: Java
 ---
 ### ArrayList介绍
-对于 ArrayList ，相信大家都很熟悉，天天都会接触到它。JangGwa 从源码角度再和你熟悉一遍，这边先简单介绍下 ArrayList 。<!-- more-->
+对于 ArrayList ，相信大家都很熟悉，天天都会接触到它。JangGwa 从源码角度再和你熟悉一遍，这边先简单介绍下 ArrayList 。
 
 1.基于数组实现，是一个**动态数组**，其容量能自动增长。
 
-2.ArrayList**不是线程安全的**，建议在单线程中使用，多线程可以选择 Vector 或 CopyOnWriteArrayList 。
+2.ArrayList **不是线程安全的**，建议在单线程中使用，多线程可以选择 Vector 或 CopyOnWriteArrayList 。
 
 3.实现了 RandomAccess 接口，可以**通过下标序号进行快速访问**。
 
@@ -20,7 +20,7 @@ tags: Java
 
 ArrayList 继承了 AbstractList 并实现了 List,RandomAccess, Cloneable, java.io.Serializable 接口，上面做了相应的介绍就不再阐述了。关键我们看两个重要的属性 **elementData** 和 **size**。
 
-**elementData:**保存了添加到 ArrayList 中的元素。实际上，elementData 是个动态数组，我们能通过构造函数 `ArrayList(int initialCapacity)` 来执行它的初始容量为initialCapacity；如果通过不含参数的构造函数`ArrayList()`来创建 ArrayList ，则elementData的容量默认是10。
+**elementData:**保存了添加到 ArrayList 中的元素。实际上，elementData 是个动态数组，我们能通过构造函数 `ArrayList(int initialCapacity)` 来执行它的初始容量为 initialCapacity；如果通过不含参数的构造函数`ArrayList()`来创建 ArrayList ，则 elementData 的容量默认是10。
 
 **size:** 动态数组的实际大小。
 
@@ -261,7 +261,7 @@ public Object clone() {
 - ArrayList 的克隆函数，即是将全部元素克隆到一个数组中。
 - ArrayList 实现 java.io.Serializable 的方式。当写入到输出流时，先写入“容量”，再依次写入“每一个元素”；当读出输入流时，先读取“容量”，再依次读取“每一个元素”。
 
-- **toArray()会抛出“java.lang.ClassCastException”异常**
+- **toArray() 会抛出“java.lang.ClassCastException”异常**
 
 
 

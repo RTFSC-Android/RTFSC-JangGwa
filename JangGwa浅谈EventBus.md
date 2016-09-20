@@ -5,7 +5,7 @@ tags: 源码解析
 ---
 
 ### 简述
-[EventBus](https://github.com/greenrobot/EventBus) 是一款针对Android优化的发布/订阅事件总线。主要功能是替代Intent,Handler,BroadCast在Fragment，Activity，Service，线程之间传递消息。优点是开销小，代码更优雅，以及将发送者和接收者解耦。<!-- more -->
+[EventBus](https://github.com/greenrobot/EventBus) 是一款针对 Android 优化的发布/订阅事件总线。主要功能是替代 Intent,Handler,BroadCast 在Fragment，Activity，Service，线程之间传递消息。优点是开销小，代码更优雅，以及将发送者和接收者解耦。
 
 ### 基本使用
 1.新建一个类，AnyEventType。可以是网络请求返回的字符串，也可以是某个开关状态，也可以是空。
@@ -45,7 +45,7 @@ EventBus.getDefault().unregister(this);
 ```
 
 ### 源码解析
-##### 1.新建EventBus
+##### 1.新建 EventBus
 - 默认可通过静态函数 getDefault 获取单例
 
   ```java
@@ -77,7 +77,7 @@ EventBus.getDefault().unregister(this);
 
 ##### 2.register
 register 函数中会先根据订阅者类名去 subscriberMethodFinder
-中查找当前订阅者所有事件响应函数，然后循环每一个事件响应函数，依次执行subscribe 函数
+中查找当前订阅者所有事件响应函数，然后循环每一个事件响应函数，依次执行 subscribe 函数
 
 ```java
 public void register(Object subscriber) { 
@@ -98,7 +98,7 @@ synchronized (this) {
 ##### 3.subscribe
 源码太长就不全部贴出来了
 
-1.首先通过 subscriptionsByEventType 得到该事件类型所有订阅者信息队列，根据优先级将当前订阅者信息插入到订阅者队列subscriptionsByEventType中；如果添加过就抛出异常。
+1.首先通过 subscriptionsByEventType 得到该事件类型所有订阅者信息队列，根据优先级将当前订阅者信息插入到订阅者队列 subscriptionsByEventType 中；如果添加过就抛出异常。
 
 ```java
 CopyOnWriteArrayList<Subscription> subscriptions = subscriptionsByEventType.get(eventType);
@@ -122,7 +122,7 @@ if (subscribedEvents == null) {
   }
 ```
 
-3.检查这个事件是否是 Sticky 事件，如果是则立即分发sticky事件
+3.检查这个事件是否是 Sticky 事件，如果是则立即分发 sticky 事件
 
 ```java
 if (subscriberMethod.sticky) { 
@@ -181,7 +181,7 @@ postToSubscription 函数中会判断订阅者的 ThreadMode，从而决定在�
 
 
 ##### 5.unregister
-通过 typesBySubscriber 来取出这个subscriber订阅者订阅的事件类型,从 typesBySubscriber 移除 subscriber。
+通过 typesBySubscriber 来取出这个 subscriber 订阅者订阅的事件类型,从 typesBySubscriber 移除 subscriber。
 
 ```java
 public synchronized void unregister(Object subscriber) { 

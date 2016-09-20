@@ -6,7 +6,7 @@ tags: Java
 
 ### HashMap简介
 
-JangGwa 从源码角度带你熟悉一下**JDK1.8**的 HashMap ，首先简单介绍下 HashMap 。<!-- more -->
+JangGwa 从源码角度带你熟悉一下 **JDK1.8** 的 HashMap ，首先简单介绍下 HashMap 。
 
 1.HashMap 有三种数据结构，**数组**，**链表**，**红黑树**。
 
